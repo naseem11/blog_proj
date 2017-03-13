@@ -45,6 +45,7 @@ INSTALLED_APPS = [
      'django_gravatar',
      # For Forms...............
    'django_forms_bootstrap',
+    'accounts'
 ]
 
 MIDDLEWARE = [
