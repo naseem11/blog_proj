@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.views.static import serve
 from .settings import MEDIA_ROOT
 from blog_app.views import post_list
+from django.conf import settings
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -27,3 +28,8 @@ urlpatterns = [
 
     url(r'^media/(?P<path>.*)$', serve, {'document_root': MEDIA_ROOT}),#Url for mapping media files
 ]
+if settings.DEBUG:
+    import debug_toolbar
+    urlpatterns = [
+        url(r'^__debug__/', include(debug_toolbar.urls)),
+    ] + urlpatterns
