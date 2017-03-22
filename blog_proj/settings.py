@@ -129,8 +129,12 @@ USE_L10N = True
 
 USE_TZ = True
 
+# Added code
 
-
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'accounts.backends.EmailAuth'
+]
 
 # code for Disqus.........
 

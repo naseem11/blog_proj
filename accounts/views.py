@@ -15,7 +15,7 @@ def logout(request):
     return redirect(reverse('index'))
 
 
-@login_required(login_url='/login?next=profile')
+@login_required(login_url='/accounts/login')
 def profile(request):
     return render(request, 'profile.html')
 def login(request):

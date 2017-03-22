@@ -39,6 +39,8 @@ def create_post(request):
 
 def edit_post(request, id):
    post = get_object_or_404(Post, pk=id)
+
+
    if request.method == "POST":
        form = BlogPostForm(request.POST, request.FILES, instance=post)
        if form.is_valid():
