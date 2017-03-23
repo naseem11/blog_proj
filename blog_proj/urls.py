@@ -26,7 +26,7 @@ urlpatterns = [
     url(r'^$', post_list, name='index'),
     url(r'',include('blog_app.urls')),
 
-    url(r'^media/(?P<path>.*)$', serve, {'document_root': MEDIA_ROOT}),#Url for mapping media files
+   # url(r'^media/(?P<path>.*)$', serve, {'document_root': MEDIA_ROOT}),#Url for mapping media files
 ]
 if settings.DEBUG:
     import debug_toolbar
